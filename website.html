@@ -1,0 +1,173 @@
+<!---Portfolio Website by Anushka Srivastava BCA 1 EA (made using youtube tutorial)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img width="150" height="150" src="photos/FullLogo_Transparent.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                    <img src="photos/square-xmark-solid-full.svg" class="fas" onclick="closemenu()" width="20px" height="20px">
+                </ul>
+                <img src="photos/bars-solid-full.svg" class="fas" onclick="openmenu()" width="20px" height="20px">
+            </nav>
+            <div class="header-text">
+                <p> BCA Student</p>
+                <h1> Hi! I'm <span>Anushka Srivastava</span><br>from BCA 1 EA</h1>
+            </div>
+        </div>
+    </div>
+<!--------about-------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="photos/bg.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me </h1>
+                    <p> Hello, I'm Anushka as you might have already read. I have a knack for creative
+                        thinking (math not as much); I can work with paint, words, design software, and
+                        I'm also learning foreign languages side-by-side. I got into coding in sixth grade
+                        when I started with HTML. Since then I've studied a bit of PHP, SQL, Python, and now in college 
+                        I am studying C. Hope you like this website that I spent all my coffee on!
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-content active-tab" id="skills">
+                        <ul>
+                            <li><span>Design</span><br> Designing posters, banners, and posts</li>
+                            <li><span>Public Speaking</span><br>Anchoring events, and managing people</li>
+                            <li><span>Event Management</span><br>Organised and managed school-level events</li>
+                            <li><span>Content Writing</span><br>Writing blogs, scripts, and reports</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="experience">
+                        <ul>
+                            <li><span>Secretary of Interact Club (2024-2025)</span><br>Led community service projects, handled
+                            administration tasks, and managed the team</li>
+                            <li><span>Social Media Director For Interact Club (2023-2024)</span><br>Handled all social media accounts
+                            and organised community service events</li>
+                            <li><span>House Captain in Student Council (2024-2025)</span><br>Organised and hosted team-building 
+                            workshops and trained, and led juniors for respective competitons</li>
+                            <li><span>Artist</span><br>Attended numerous workshops and competitions, taught art to under-privileged children,
+                            met noble peace prize winner Jamuna Tudu and gifted her my art as a token of gratitude. Also awarded the best artist title in school.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="education">
+                        <ul>
+                            <li><span>Undergraduate</span><br>BCA 1st Semester student at VIPS-TC, Pitampura</li>
+                            <li><span>12th Grade (Humanities)</span><br>Graduated from DAV Centenary Public School with 95.8%</li>
+                            <li><span>10th Grade</span><br>Graduated from DAV Centenary Public School with 88%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!---------portfolio---------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="subtitle"> My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="photos/work1.jpg">
+            </div>
+             <div class="work">
+                <img src="photos/work2.jpg">
+            </div>
+             <div class="work">
+                <img src="photos/work3.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+<!-------contact------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="subtitle">Contact Me</h1>
+                <p><img src="photos/paper-plane-solid-full.svg" width="20px" height="20px">anushka.srivastava1502@gmail.com</p>
+                <p><img src="photos/phone-solid-full.svg" width="20px" height="20px" >9625638907</p>
+                <div class="social-icons">
+                    <a href="https://nushk1e2.wordpress.com/">
+                        <img src="photos/wordpress-brands-solid-full.svg" width="40px" height="40px"></a>
+                    <a href="https://www.linkedin.com/in/anushka-srivastava-849b40307">
+                        <img src="photos/linkedin-brands-solid-full.svg" width="40px" height="40px"></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<!--Javascript-->
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-content");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+    </script>
+    <script>
+        var sidemenu= document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+    <!--following code taken from "https://github.com/jamiewilson/form-to-google-sheets" to transfer
+    data to google sheets-->
+    <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycby_M91CeqAllmZvlMX2Bus8iujDUmc1IbIchNVLnhbDKYiqdq9es1LVcUDBs6g2uucTWA/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message sent succesfully!"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
+<!-----I don't know how i finished this when I've just started college but it was fun and informative
+so thank you ACE!-->
